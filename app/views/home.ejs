@@ -6,6 +6,14 @@
     <link rel="stylesheet" href="/yourcssgoeshere/style.css">
 </head>
 <body>
+    <div class="logo-animation-wrapper">
+        <div class="logo-split left-half">
+            <img src="/yourimagesgoimg/Logo.png" alt="Portfolio Logo">
+        </div>
+        <div class="logo-split right-half">
+            <img src="/yourimagesgoimg/Logo.png" alt="Portfolio Logo">
+        </div>
+    </div>
     <%- include('../partials/portfolioLogo')%>
     <%- include('../partials/navigationBar')%>
     <main>
@@ -13,5 +21,13 @@
         <p>Welcome to my portfolio website! <a href="aboutMe" target="_blank">About Me</a></p>
     </main>
     <%- include('../partials/footer')%>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            setTimeout(() => {
+                document.querySelector('.logo-animation-wrapper').style.display = 'none';
+            }, 1000); // Wait for the full animation to complete
+        });
+        </script>
+    </body>
 </body>
 </html>

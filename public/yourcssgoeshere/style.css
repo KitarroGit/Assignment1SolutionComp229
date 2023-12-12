@@ -1,41 +1,186 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset some default styles */
+ul, p, h1 {
     margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
 }
 
+/* Apply a box-sizing rule */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/* Improved body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #5a5a5a; /* Softer text color */
+    background-color: #f0f0f0; /* Light grey background for ease on the eyes */
+}
+
+/* Navigation bar */
 nav ul {
     list-style-type: none;
     padding: 0;
-    background-color: #333;
-    text-align: center;
+    margin: 0;
+    background-color: #eaeaea; /* Lighter background for nav */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Less intense shadow */
+    display: flex;
+    justify-content: center; /* Center nav items */
+    padding: 10px 0;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin: 0 10px; /* Adjusted spacing */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #333;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 20px; /* Bubbly links */
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #dcdcdc; /* Light hover effect */
+}
+
+/* Logo container centering */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Main content */
+main {
+    text-align: center;
+    padding: 20px;
 }
 
 main h1 {
-    text-align: center;
     color: #333;
+    margin-bottom: 20px; /* Spacing under the h1 */
 }
 
 main p {
-    text-align: center;
-    margin: 20px;
+    margin: 20px auto; /* Centered paragraph with margin */
+    line-height: 1.6;
+    max-width: 800px; /* Max width for readability */
 }
 
+/* Footer styling */
 footer {
     text-align: center;
     padding: 20px 0;
     background-color: #333;
     color: white;
+    border-top: 5px solid #eaeaea; /* Light border above footer */
+}
+
+/* Form styling adjustments */
+form input[type='text'],
+form input[type='email'] {
+    border: 1px solid #ccc; /* Add border to inputs */
+    margin-bottom: 10px; /* Spacing under inputs */
+    width: calc(100% - 20px); /* Adjust width accounting for padding */
+    padding: 10px;
+}
+
+/* Submit and reset button styling */
+form input[type='submit'],
+form input[type='reset'] {
+    background-color: #5a5a5a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    margin-right: 10px;
+}
+
+form input[type='submit']:hover,
+form input[type='reset']:hover {
+    background-color: #404040;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+    }
+
+    nav ul li a {
+        margin-bottom: 5px; /* Spacing between stacked links */
+    }
+}
+
+.logo-container img {
+    padding: 20px; /* Space around the logo */
+    max-width: 300px; /* Maximum width of the logo */
+    width: 100%; /* Ensures the image is responsive within its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Center the image in its container */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Full-screen logo container */
+.logo-animation-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo split styling */
+.logo-split {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: showLogo 0.5s ease forwards, slideOut 0.5s 0.5s forwards;
+}
+
+.left-half {
+    justify-content: flex-end;
+}
+
+.right-half {
+    justify-content: flex-start;
+}
+
+.left-half img, .right-half img {
+    width: 100vw; /* Full viewport width */
+    height: auto;
+    position: absolute;
+}
+
+@keyframes showLogo {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideOut {
+    100% {
+        transform: translateX(calc(-100% * var(--direction))); /* Slide out */
+    }
+}
+
+/* Set a custom property for direction of the halves */
+.left-half { --direction: 1; }
+.right-half { --direction: -1; }
+
+/* Adjustments for navigation bar */
+nav {
+    position: relative; /* To ensure it's on top of the overlay */
+    z-index: 10;
 }
