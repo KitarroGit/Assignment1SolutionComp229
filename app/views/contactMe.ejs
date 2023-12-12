@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Contact Me </title>
+    </head>
+    <body>
+        <div>
+            <header>
+                <%- include('../partials/portfolioLogo')%>
+                <%- include('../partials/navigationBar')%>
+                <hr>
+            </header>
+            <main>
+                <%- include('../partials/heading')%>
+                <p>Phone Number : 6474573725, Email: dogarenk@my.centennialcollege.ca</p>
+                <div id="contactForm">
+                        <form>
+                            <fieldset>
+                            <legend><b>PERSONAL INFORMATION:</b>&nbsp</legend>
+                            <p>
+                            <label><b>*First Name: </b></label>
+                            <input type="text" placeholder="First Name" required>
+                            <label><b>*Last Name: </b></label>
+                            <input type="text" placeholder="Last Name" required>
+                            </p>
+                            <p>
+                            <label><b>*Email: </b></label>
+                            <input type="text" placeholder="PlaceHolder@email.com" required>
+                
+                            <label><b>*Company Address: </b></label>
+                            <input type="text" placeholder="Add your address here" required>
+                            </p>
+                        </fieldset>
+                        <fieldset id="buttons">
+                            <input type="reset" value="Clear">
+                            <input type="submit" value="Submit">
+                        </fieldset>
+                    </form>
+                </div>
+            </main>
+            <%- include('../partials/footer')%>
+        </div> 
+    </body>
+</html>
