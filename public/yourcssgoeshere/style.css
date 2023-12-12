@@ -15,6 +15,8 @@ body {
     padding: 0;
     color: #5a5a5a; /* Softer text color */
     background-color: #f0f0f0; /* Light grey background for ease on the eyes */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navigation bar */
@@ -58,6 +60,7 @@ nav ul li a:hover {
 main {
     text-align: center;
     padding: 20px;
+    flex: 1;
 }
 
 main h1 {
@@ -87,6 +90,7 @@ form input[type='email'] {
     margin-bottom: 10px; /* Spacing under inputs */
     width: calc(100% - 20px); /* Adjust width accounting for padding */
     padding: 10px;
+    border-radius: 10px; 
 }
 
 /* Submit and reset button styling */
@@ -102,6 +106,14 @@ form input[type='reset'] {
 form input[type='submit']:hover,
 form input[type='reset']:hover {
     background-color: #404040;
+}
+
+.form-container {
+    border-radius: 10px;
+}
+
+fieldset {
+    border-radius: 10px;
 }
 
 /* Responsive adjustments */
@@ -122,6 +134,7 @@ form input[type='reset']:hover {
     height: auto; /* Maintain aspect ratio */
     display: block; /* Center the image in its container */
     margin: 0 auto; /* Center the image horizontally */
+    border-radius: 80px;
 }
 
 /* Full-screen logo container */
@@ -183,4 +196,13 @@ form input[type='reset']:hover {
 nav {
     position: relative; /* To ensure it's on top of the overlay */
     z-index: 10;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333333; /* Dark grey text color for readability */
+    font-family: 'Arial', sans-serif;
 }
