@@ -1,5 +1,6 @@
 An resume website for COMP229.
 
-student name: Denis Ogarenko.
+Student's name: Denis Ogarenko.
+ID: 301277093
 
 Both contributing accounts are the same person
