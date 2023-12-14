@@ -17,17 +17,21 @@
     <%- include('../partials/portfolioLogo')%>
     <%- include('../partials/navigationBar')%>
     <main>
-        <h1>Welcome to the Home page</h1>
-        <p>Welcome to my portfolio website! <a href="aboutMe" target="_blank">About Me</a></p>
+        <h1>Welcome to the About page</h1>
+        <p>I am an international student studying in the Centennial College. My current program is AI, proficient with JavaScript, C#, Python, C++, NodeJS, HTML+CSS, Java, SQL workspaces.<br>
+        <a href="/yourpdfgoeshere/contactMe.pdf" target="_blank">My resume</a></p>
     </main>
     <%- include('../partials/footer')%>
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
-            setTimeout(() => {
-                document.querySelector('.logo-animation-wrapper').style.display = 'none';
-            }, 1000); // Wait for the full animation to complete
+          setTimeout(() => {
+            const logoWrapper = document.querySelector('.logo-animation-wrapper');
+            if (logoWrapper) {
+              logoWrapper.remove(); // Remove the animation wrapper from the DOM
+            }
+            window.location.href = '/aboutMe'; // Redirect to the about me page
+          }, 1500); // Adjust timing to match the end of your animation
         });
-        </script>
-    </body>
+      </script>
 </body>
 </html>

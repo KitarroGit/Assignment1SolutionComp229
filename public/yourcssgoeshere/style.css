@@ -144,8 +144,8 @@ fieldset {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #fff;
-    z-index: 9999;
+    background: transparent; /* Ensure it's transparent to see the content during the animation */
+    z-index: 9999; /* High z-index to stay above the content initially */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,38 +153,46 @@ fieldset {
 
 /* Logo split styling */
 .logo-split {
-    width: 50%;
+    width: 100%; /* Full width to initially cover the content */
     height: 100%;
-    overflow: hidden;
-    position: relative;
+    position: fixed;
+    background: #fff; /* Start with a white background */
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: showLogo 0.5s ease forwards, slideOut 0.5s 0.5s forwards;
+    animation: showLogo 0.5s ease, slideOut 0.5s 0.5s ease forwards;
 }
 
 .left-half {
-    justify-content: flex-end;
+    left: 50%; /* Start from the center */
+    clip-path: inset(0 50% 0 0); /* Clip to the left half */
 }
 
 .right-half {
-    justify-content: flex-start;
+    right: 50%; /* Start from the center */
+    clip-path: inset(0 0 0 50%); /* Clip to the right half */
 }
 
 .left-half img, .right-half img {
-    width: 100vw; /* Full viewport width */
-    height: auto;
+    width: 200%; /* Double the width to maintain the full logo's aspect during the slide */
     position: absolute;
+    left: -50%; /* Adjust left position to align images */
 }
 
 @keyframes showLogo {
-    from { opacity: 0; }
+    from { opacity: 1; }
     to { opacity: 1; }
 }
 
+
 @keyframes slideOut {
+    0% {
+        transform: translateX(0);
+        background: #fff; /* White background to hide content */
+    }
     100% {
         transform: translateX(calc(-100% * var(--direction))); /* Slide out */
+        background: transparent; /* End with a transparent background to show content */
     }
 }
 
